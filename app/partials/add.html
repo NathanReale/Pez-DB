@@ -1,0 +1,102 @@
+<div class="col-sm-12">
+<h1 class="text-center">{{title}}</h1>
+
+<form class="form" role="form">
+	<div class="row">
+		<div class="form-group col-sm-8">
+			<label for="name" class="control-label">Name</label>
+			<input type="text" class="form-control" id="name" placeholder="Name" ng-model="data.Name">
+		</div>
+		<div class="form-group col-sm-4">
+			<label for="stem" class="control-label">Stem Color</label>
+			<input type="text" class="form-control col-sm-4" id="stem" placeholder="Stem Color" ng-model="data.StemColor" typeahead="f for f in autofill.colors | filter:$viewValue | limitTo:8">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="row">
+				<div class="form-group col-sm-12">
+					<label for="image" class="control-label">Image</label>
+					<input type="text" class="form-control" id="image" placeholder="Image" ng-model="data.Image">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col-sm-4">
+					<label for="variation" class="control-label">Variation</label>
+					<input type="text" class="form-control" id="variation" placeholder="Variation" ng-model="data.Variation">
+				</div>
+				<div class="form-group col-sm-4">
+					<label for="feet" class="control-label">Feet</label>
+					<select class="form-control" id="feet" ng-model="data.Feet" ng-options="f for f in autofill.feet"></select>
+				</div>
+				<div class="form-group col-sm-4">
+				<label for="duplicates" class="control-label">Duplicates</label>
+					<input type="text" class="form-control" id="duplicates" placeholder="Duplicates" ng-model="data.Duplicates">
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<img class="img-small" ng-src="{{data.Image}}" />
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="form-group col-sm-12">
+			<label for="notes" class="control-label">Notes</label>
+			<textarea class="form-control" placeholde="Notes" ng-model="data.Notes"></textarea>
+		</div>
+	</div>
+
+	<hr />
+
+	<div class="row">
+		<div class="form-group col-sm-6">
+			<label for="series" class="control-label">Series</label>
+			<input type="text" class="form-control" id="series" placeholder="Series" ng-model="data.Series" typeahead="f for f in autofill.series | filter:$viewValue | limitTo:8">
+		</div>
+		<div class="form-group col-sm-6">
+			<label for="category" class="control-label">Category</label>
+			<input type="text" class="form-control" id="category" placeholder="Category" ng-model="data.Category" typeahead="f for f in autofill.categories | filter:$viewValue | limitTo:8">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="form-group col-sm-2">
+			<label for="country" class="control-label">Country of Origin</label>
+			<input type="text" class="form-control" id="country" placeholder="Country of Origin" ng-model="data.CountryOfOrigin" typeahead="f for f in autofill.originCountry | filter:$viewValue | limitTo:8">
+		</div>
+		<div class="form-group col-sm-2">
+			<label for="release" class="control-label">Release Country</label>
+			<input type="text" class="form-control" id="release" placeholder="Release Country" ng-model="data.ReleaseCountry" typeahead="f for f in autofill.releaseCountry | filter:$viewValue | limitTo:8">
+		</div>
+		<div class="form-group col-sm-2">
+			<label for="patent" class="control-label">Patent Number</label>
+			<select class="form-control" id="patent" ng-model="data.PatentNumber" ng-options="f for f in autofill.patentNumber"></select>
+		</div>
+		<div class="form-group col-sm-2">
+			<label for="imc" class="control-label">IMC</label>
+			<select class="form-control" id="imc" ng-model="data.Imc" ng-options="f for f in autofill.imc"></select>
+		</div>
+				<div class="form-group col-sm-2">
+			<label for="introduced" class="control-label">Year Introduced</label>
+			<input type="text" class="form-control" id="introduced" placeholder="Year Introduced" ng-model="data.YearIntroduced">
+		</div>
+		<div class="form-group col-sm-2">
+			<label for="purchased" class="control-label">Year Purchased</label>
+			<input type="text" class="form-control" id="purchased" placeholder="Year Purchased" ng-model="data.YearPurchased">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="form-group col-sm-12">
+			<button class="btn btn-primary" ng-click="save()">Save</button>
+			<button class="btn btn-primary" ng-click="saveMore()" ng-hide="edit">Save and Add Another</button>
+			<button class="btn btn-default" ng-click="cancel()">Cancel</button>
+			<button class="btn btn-danger" ng-click="remove()" ng-show="edit">Delete</button>
+		</div>
+	</div>
+
+</form>
+
+</div>

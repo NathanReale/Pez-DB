@@ -1,0 +1,24 @@
+<div class="col-sm-4">
+	<img class="img-rounded img-large" ng-src="{{data.Image}}" />
+	<hr />
+	<div class="form-controls">
+		<button class="btn btn-primary" ng-click="edit()">Edit</button>
+	</div>
+</div>
+<div class="col-sm-8">
+	<h2>{{data.Name}}</h2>
+
+	<p><strong>Series:</strong> <a href="#/series/{{data.Series}}">{{data.Series}}</a></p>
+	<p><strong>Category:</strong> {{data.Category}}</p>
+	<p><strong>Stem Color:</strong> {{data.StemColor}}</p>
+	<p><strong>Variation:</strong> {{data.Variation}}</p>
+	<p><strong>Patent Number:</strong> {{data.PatentNumber}}</p>
+	<p><strong>Country Of Origin:</strong> {{data.CountryOfOrigin}}</p>
+	<p><strong>IMC:</strong> {{data.Imc}}</p>
+	<p><strong>Feet:</strong> {{data.Feet}}</p>
+	<p><strong>Release Country:</strong> {{data.ReleaseCountry}}</p>
+	<p><strong>Year Introduced:</strong> {{data.YearIntroduced}}</p>
+	<p><strong>Year Purchased:</strong> {{data.YearPurchased}}</p>
+	<p><strong>Duplicates:</strong> {{data.Duplicates}}</p>
+	<p><strong>Notes:</strong> {{data.Notes}}</p>
+</div>

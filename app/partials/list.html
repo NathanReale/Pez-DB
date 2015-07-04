@@ -1,0 +1,31 @@
+<h1>All Pez</h1>
+<div>
+	<p>
+		<input ng-model="$parent.query" class="form-control input-lg" type="text" placeholder="Filter" />
+		<span class="help-block">Filter the results below</span>
+	</p>
+	<pagination total-items="totalItems" page="currentPage" max-size="maxSize" items-per-page="itemsPerPage"></pagination>
+	<p>{{totalItems}} results.</p>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Series</th>
+				<th>Stem Color</th>
+				<th>Year Introduced</th>
+				<th>Variation</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr ng-repeat="p in filtered = (pez | filter:$parent.query) | orderBy:['Series', 'Name'] | page:currentPage">
+				<td><a href="#/view/{{p.Id}}">{{p.Name}}</a></td>
+				<td><a href="#/series/{{p.Series}}">{{p.Series}}</a></td>
+				<td>{{p.StemColor}}</td>
+				<td>{{p.YearIntroduced}}</td>
+				<td>{{p.Variation}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<pagination total-items="totalItems" page="currentPage" max-size="maxSize" items-per-page="itemsPerPage"></pagination>
+</div>

@@ -1,0 +1,50 @@
+<h1>Wishlist</h1>
+
+<table class="table table-bordered">
+	<thead>
+		<th>Name</th>
+		<th>Description</th>
+		<th></th>
+	</thead>
+	<tbody>
+		<tr ng-repeat="w in wishlist">
+			<td>
+				<div ng-hide="w.editing">
+					{{w.Name}}
+				</div>
+				<div ng-show="w.editing">
+					<input ng-model="w.Name" />
+				</div>
+			</td>
+			<td>
+				<div ng-hide="w.editing">
+					{{w.Description}}
+				</div>
+				<div ng-show="w.editing">
+					<input ng-model="w.Description" />
+				</div>
+			</td>
+			<td>
+				<div ng-hide="w.editing">
+					<button class="btn btn-primary" ng-click="edit(w)">Edit</button>
+				<button class="btn btn-danger" ng-click="remove(w)">Remove</button>
+				</div>
+				<div ng-show="w.editing">
+					<button class="btn btn-primary" ng-click="save(w)">Save</button>
+					<button class="btn btn-danger" ng-click="cancelEdit(w)">Cancel</button>
+				</div>
+				
+			</td>
+		</tr>
+		<tr ng-show="adding">
+			<td><input ng-model="add.Name" /></td>
+			<td><input ng-model="add.Description" /></td>
+			<td>
+				<button class="btn btn-primary" ng-click="addNew()">Save</button>
+				<button class="btn btn-danger" ng-click="cancelAdd()">Cancel</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<button class="btn btn-primary" ng-click="showAdd()">Add</button>
